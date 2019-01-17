@@ -10,4 +10,6 @@ namespace example_1 {
   
   StatusCode addAPI(const std::vector<size_t>& A,  const std::vector<size_t>& B, std::vector<size_t>& C);
 
+  std::vector<size_t> addAPI(const std::vector<size_t>& A,  const std::vector<size_t>& B);
+
 } 
