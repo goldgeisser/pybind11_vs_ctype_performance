@@ -5,7 +5,6 @@
 #include <iostream>
 
 namespace example_1 {
-
   
   template<typename T>
   StatusCode add(const T& A, const T& B, T& C) {
@@ -28,8 +27,14 @@ namespace example_1 {
       std::cout << c;
     std::cout << std::endl;
 #endif
+    return StatusCode::mSUCCESS; 
   }
 
+  StatusCode add(const size_t* A, const size_t* B, size_t size, size_t* C) {
 
-  
-} // end namespace example_1
+    for (size_t i = 0; i < size; ++i) C[i] = A[i] + B[i];
+
+    return StatusCode::mSUCCESS; 
+  }
+
+ } // end namespace example_1

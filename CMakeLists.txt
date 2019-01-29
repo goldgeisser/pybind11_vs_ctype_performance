@@ -54,3 +54,12 @@ add_executable(example_1 ${MAIN_SOURCES})
 #target_include_directories(onn PUBLIC ${ONNX_INCLUDE_DIRS} ${CUDNN_INCLUDE_DIR})
 
 target_link_libraries(example_1 PUBLIC my_vector_add)
+
+#------------------------------------------- Python testing
+message("LG_DEBUG CMAKE_CURRENT_SOURCE_DIR = ${CMAKE_CURRENT_SOURCE_DIR}")
+message("LG_DEBUG CMAKE_SOURCE_DIR = ${CMAKE_SOURCE_DIR}")
+message("LG_DEBUG CMAKE_BINARY_DIR = ${CMAKE_BINARY_DIR}")
+
+file(GLOB PYTHON_EXAMPLES ${CMAKE_SOURCE_DIR}/example_*.py)
+file(COPY ${PYTHON_EXAMPLES} DESTINATION ${CMAKE_BINARY_DIR})
+

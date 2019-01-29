@@ -19,3 +19,13 @@ namespace example_1 {
     return C;
   }
 }
+
+
+//...LG this will not be recognized in ctypes but will be recognized in pybind11
+void foo() {
+  std::cout << "foo" << std::endl;
+}
+
+extern "C" void foo_c() {
+  return foo();
+}
